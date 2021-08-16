@@ -10,7 +10,7 @@ What you need to install first
 
 3. **Android Studio** & **JDK** for Android development
 
-Please refer to https://reactnative.dev/docs/environment-setup for detail
+Please refer to the **React Native CLI Quickstart** in https://reactnative.dev/docs/environment-setup for more details
 
 ## Install dependencies
 Run the following command in the project folder
@@ -18,12 +18,12 @@ Run the following command in the project folder
 npm install
 ```
 
-Run the following command in `NextToGo/ios/` folder (skip this if you develop for Android only)
+Run the following command in `<Project Folder>/ios/` folder (skip this if you develop for Android only)
 ```bash
 pod install
 ```
 
-## Run
+## Run the App
 **Step 1**. Run the following command in the project folder.
 
 ```bash
