@@ -16,7 +16,6 @@ import {
   StyleSheet,
   Switch,
   Text,
-  useColorScheme,
   View,
 } from 'react-native';
 
@@ -81,11 +80,11 @@ class Race {
   }
 
   countDownTime(): string {
-    let diff = (this.startTime.getTime() - new Date().getTime()) / 1000;
+    let diff = Math.ceil((this.startTime.getTime() - new Date().getTime()) / 1000);
     let sign = Math.sign(diff);
     let timeInSeconds = Math.abs(diff);
 
-    let seconds = Math.floor(timeInSeconds % 60);
+    let seconds = timeInSeconds % 60;
     let timeInMinutes = Math.floor(timeInSeconds / 60);
     let minutes = Math.floor(timeInMinutes % 60);
     let hours = Math.floor(timeInMinutes / 60);
@@ -205,7 +204,8 @@ const FilterGroup: React.FC<{
   onFilterChange?: (selectedOptions: string[]) => void | Promise<void>,
 }> = ({ options, onFilterChange }) => {
 
-  const [filter, setFilter] = useState<boolean[]>(Array<boolean>(options.length));
+  const [filter, setFilter] = useState<boolean[]>(Array<boolean>(options.length).fill(true));
+
   useEffect(() => {
     let selectedOptions = options.filter((_, index) => filter[index]);
     if (onFilterChange) onFilterChange(selectedOptions);
@@ -222,7 +222,7 @@ const FilterGroup: React.FC<{
             let newFilter = [...filter];
             newFilter[index] = value;
             if (newFilter.every(item => item === false)) {
-              newFilter = newFilter.map(item => true);
+              newFilter = newFilter.fill(true);
             }
             setFilter(newFilter);
           }} />
