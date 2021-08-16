@@ -1,10 +1,16 @@
 # NextToGo
 
 ## Setting up environment
-node
-yarn
-Xcode
-Android Studio
+
+What you need to install first
+
+1. **Node**
+
+2. **Xcode** & **Cocapods** for iOS development
+
+3. **Android Studio** & **JDK** for Android development
+
+Please refer to https://reactnative.dev/docs/environment-setup for detail
 
 ## Install dependencies
 Run the following command in the project folder
@@ -18,12 +24,14 @@ pod install
 ```
 
 ## Run
-Step 1. Run the following command in the project folder
+**Step 1**. Run the following command in the project folder.
+
 ```bash
 npx react-native start
 ```
 
-Step 2. Open a new terminal, cd to the project folder
+**Step 2**. Open a new terminal, cd to the project folder.
+
 Execute the following to run the app on an iOS device or simulator
 ```bash
 npx react-native run-ios
